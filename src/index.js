@@ -101,6 +101,10 @@ app.delete(`/api/post/:id`, async (req, res) => {
   res.json(post)
 })
 
+app.get("/on-line", (req, res) => {
+  return res.send("Aplicação on-line de boas");
+});
+
 app.get(`/api/post/:id`, async (req, res) => {
   const { id } = req.params
   const post = await prisma.post.findUnique({
